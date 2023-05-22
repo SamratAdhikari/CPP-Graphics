@@ -6,7 +6,7 @@
 #include <fstream>
 
 
-#pragma comment(lib, "winmm.lib")
+// #pragma comment(lib, "winmm.lib")
 
 #include "body.h"
 #include "food.h"

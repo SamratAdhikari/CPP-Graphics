@@ -129,6 +129,12 @@ void Snake::growSnake()
 // change the direction of snake head // 20
 void Snake::changeDir(int newDir)
 {
+	bool oppDir = (newDir==LEFT && head->direction==RIGHT) || (newDir==RIGHT && head->direction==LEFT) ||
+					(newDir==UP && head->direction==DOWN) || (newDir==DOWN && head->direction==UP);
+
+	if (oppDir)
+		return;
+
     if (newDir == LEFT){
     	if (head->direction != LEFT){
     		x_dis = -30;
