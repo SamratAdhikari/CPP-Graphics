@@ -16,6 +16,7 @@ using namespace std;
 
 int main(){
 
+
 	// Game Variables
 	int WIDTH = GetSystemMetrics(SM_CXSCREEN);
 	int HEIGHT = GetSystemMetrics(SM_CYSCREEN);
@@ -46,12 +47,13 @@ int main(){
 
 	// Game loop
 	while (true){
+		
 
 		// PlaySound(TEXT("bgMusic.wav"), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
 		
 		// Update game window
-		setactivepage(page);
-		setvisualpage(1-page);
+		setvisualpage(page);
+		setactivepage(1-page);
 
 		// ---------------------- MAIN SECTION ---------------------- //
 		setcolor(LIGHTGRAY);
@@ -145,7 +147,6 @@ int main(){
 	
 
 		delay(60);
-		// cleardevice();
 		page = 1 - page;
 		}
 

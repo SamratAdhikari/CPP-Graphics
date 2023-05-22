@@ -33,6 +33,7 @@ public:
 void Food::drawFood(){
 	setcolor(BLACK);
 	circle(foodPos.x, foodPos.y, 15); //10
+	setfillstyle(SOLID_FILL, MAGENTA);
 	floodfill(foodPos.x, foodPos.y, BLACK);
 
 }
