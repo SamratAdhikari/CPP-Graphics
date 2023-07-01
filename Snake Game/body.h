@@ -10,7 +10,6 @@ struct Node{
 	int direction;
 	Node* next = NULL;
 	Node* prev = NULL;
-
 };
 
 class Snake{

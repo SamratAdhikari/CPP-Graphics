@@ -10,6 +10,7 @@
 
 #include "body.h"
 #include "food.h"
+#include "splashScreen.h"
 
 using namespace std;
  
@@ -25,6 +26,7 @@ int main(){
 	int food = 0;
 	bool checkX;
 	bool checkY;
+	bool isGameOver = false;
 
 	std::ifstream readFile;
 	readFile.open("assets/highscore.txt");
@@ -44,6 +46,12 @@ int main(){
 	Food fd;
 
 	fd.setPos(400, 400);
+
+
+
+
+	// initial splash screen
+	startScreen(WIDTH, HEIGHT);
 
 	// Game loop
 	while (true){
@@ -127,8 +135,8 @@ int main(){
 		// ---------------------- COLLISION ---------------------- //
 		
 		// Collision with the border
-		if ((sn.getPosX() < 10) || (sn.getPosY() < 105) || (sn.getPosX() > WIDTH-10) || (sn.getPosY() > HEIGHT-10)){
-			system("pause");
+		if ((sn.getPosX() < 10) || (sn.getPosY() < 97) || (sn.getPosX() > WIDTH-37) || (sn.getPosY() > HEIGHT-20)){
+			break;
 		}
 
 		// Collision with food
@@ -142,13 +150,22 @@ int main(){
 		
 
 		// Collision with itself
-		if (sn.isCollision())
-			system("pause");
+		if (sn.isCollision()){
+			break;
+		}
 	
 
 		delay(60);
 		page = 1 - page;
 		}
+
+
+		// exit splash screen
+		setvisualpage(0);
+		setactivepage(0);
+		// isGameOver = true;
+		exitScreen(WIDTH, HEIGHT, food, highscore);
+		
 
 
 		if (food > highscore)
