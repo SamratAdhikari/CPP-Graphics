@@ -11,9 +11,14 @@ int main(){
 
     setlinestyle(0, 0, 3);
 
+    int page = 0;
+
 
 
     while (true){
+
+        setactivepage(page);
+        setvisualpage(1-page);
 
         cleardevice();
 
@@ -35,6 +40,7 @@ int main(){
             break;
 
         delay(10);
+        page = 1 - page;
     }
    
     getch();

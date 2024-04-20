@@ -1,7 +1,7 @@
 #include <graphics.h>
 #include <time.h>
 #include <iostream>
-using namespace std;
+
 
 
 struct POS{

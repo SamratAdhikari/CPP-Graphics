@@ -30,7 +30,7 @@ void startScreen(int WIDTH, int HEIGHT) {
 
 
 // initial screen
-void exitScreen(int WIDTH, int HEIGHT, int food, int highscore) {
+void exitScreen(int WIDTH, int HEIGHT) {
 
     // cleardevice();
     setbkcolor(BLACK);

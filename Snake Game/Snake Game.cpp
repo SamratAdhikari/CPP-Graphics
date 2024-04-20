@@ -26,7 +26,7 @@ int main(){
 	int food = 0;
 	bool checkX;
 	bool checkY;
-	bool isGameOver = false;
+
 
 	std::ifstream readFile;
 	readFile.open("assets/highscore.txt");
@@ -75,7 +75,7 @@ int main(){
 		setfillstyle(SOLID_FILL, BLUE);
 		floodfill(15, 15, LIGHTBLUE);
 
-		// Highscore & Food count
+		// High-score & Food count
 		string str_highscore = to_string(highscore);
 		string str_food = to_string(food);
 
@@ -135,7 +135,7 @@ int main(){
 		// ---------------------- COLLISION ---------------------- //
 		
 		// Collision with the border
-		if ((sn.getPosX() < 10) || (sn.getPosY() < 97) || (sn.getPosX() > WIDTH-37) || (sn.getPosY() > HEIGHT-20)){
+		if ((sn.getPosX() < 11) || (sn.getPosY() < 97) || (sn.getPosX() > WIDTH-37) || (sn.getPosY() > HEIGHT-22)){
 			break;
 		}
 
@@ -164,7 +164,7 @@ int main(){
 		setvisualpage(0);
 		setactivepage(0);
 		// isGameOver = true;
-		exitScreen(WIDTH, HEIGHT, food, highscore);
+		exitScreen(WIDTH, HEIGHT);
 		
 
 

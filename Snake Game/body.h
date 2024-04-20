@@ -1,6 +1,6 @@
 #include <graphics.h>
 #include <iostream>
-using namespace std;
+
 
 enum DIRECTION {LEFT, RIGHT, UP, DOWN};
 
@@ -77,11 +77,6 @@ void Snake::drawSnake(){
 	}
 
 };
-
-
-
-
-
 
 
 // move snake
@@ -180,9 +175,9 @@ float Snake::getPosY(){
 // Collision between head and body
 bool Snake::isCollision(){
 
-	Node* temp = head;
-	while (temp->next->next != NULL){
-		if ((head->x == temp->next->x) && (head->y == temp->next->y)){
+	Node* temp = head->next;
+	while (temp->next != NULL){
+		if ((head->x == temp->x) && (head->y == temp->y)){
 			return true;
 		}
 

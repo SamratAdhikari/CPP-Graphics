@@ -41,7 +41,7 @@ int main(){
 		tm *ltm = localtime(&now);
 
 		// hour hand
-		setcolor(RED);
+		setcolor(LIGHTRED);
 		line(250, 250, 250+150*sin(ltm->tm_hour * PI/6), 250-80*cos(ltm->tm_hour * PI/6));
 
 		// minute hand
